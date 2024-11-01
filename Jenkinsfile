@@ -12,15 +12,14 @@ pipeline {
 				}
 			}
 		}
-		stage("Checkout"){
+		stage("Checkout") {
 			steps {
-				Checkout scm
+				checkout scm
 			}
 		}
-
-		stage("build") {
+		stage("Build") {
 			steps {
-				sh "docker comose build web"
+				sh 'docker compose build web'
 			}
 		}
 		stage("test") {
